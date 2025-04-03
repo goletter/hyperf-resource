@@ -1,0 +1,47 @@
+{
+    "name": "goletter/hyperf-resource",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "goletter",
+            "email": "goletter@outlook.com"
+        }
+    ],
+    "keywords": [
+        "php",
+        "hyperf",
+        "resource"
+    ],
+    "description": "A api resource component for hyperf.(based https://github.com/goletter/hyperf-resource)",
+    "autoload": {
+        "psr-4": {
+            "Goletter\\Resource\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "hyperf/collection": "^3.1",
+        "hyperf/db-connection": "^3.1",
+        "hyperf/resource": "^3.1",
+        "hyperf/server": "^3.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 300M -l 5 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Goletter\\Resource\\ConfigProvider"
+        }
+    }
+}
