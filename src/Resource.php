@@ -55,7 +55,7 @@ class Resource extends JsonResource
     ): Collection {
         if (! self::$relationLoaded) {
             $resource->loadMissing(static::getIncludeRelations(static::$collectionAvailableIncludes));
-            self::$relationLoaded = true;
+            // self::$relationLoaded = true;
         }
 
         return tap(new Collection($resource, static::class, $codeStatus, $message), function ($collection) {
